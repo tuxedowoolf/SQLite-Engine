@@ -1,7 +1,18 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include "ValidTokens.h"
-
+#include "CREATE INDEX.h"
+#include "CREATE TABLE.h"
+#include "DELETE.h"
+#include "DISPLAY TABLE.h"
+#include "DROP INDEX.h"
+#include "DROP TABLE.h"
+#include "INSERT.h"
+#include "SELECT.h"
+#include "UPDATE.h"
+#include "Table.h"
+#include "Index.h"
+#include "Columns.h"
 using namespace std;
 
 class Query
@@ -219,6 +230,7 @@ void Query::readQuery(istream& input)
 	char* queryInput;
 	queryInput = new char[257];
 	input.getline(queryInput, 256);
+	if (strlen(queryInput) < 3) return;
 	setQuery(queryInput);
 	setTokens();
 }

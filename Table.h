@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 #include "Columns.h"
 using namespace std;
 class Table
@@ -108,7 +107,7 @@ ostream& operator<<(ostream& console, const Table& t)
 	cout << "Columns:" << endl;
 	for (int i = 0; i < t.noColumns; i++)
 	{
-		cout << "Column " << i + 1 << ": " << t.columns[i].getName() << ", Type: " << t.columns[i].getType() << ", Default: ";
+		cout << "Column " << i + 1 << ": " << t.columns[i].getName() << ", Type: " << t.columns[i].getType() << ", Size: " << t.columns[i].getSize() << ", Default: ";
 		switch (t.columns[i].getType())
 		{
 		case TEXT: cout << t.columns[i].getDefaultText(); break;

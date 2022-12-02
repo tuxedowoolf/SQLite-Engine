@@ -13,6 +13,7 @@ class Column
 private:
 	char* name = nullptr;
 	ColumnType type = TEXT;
+	int size = 0;
 
 	char* defaultText = nullptr;
 	int defaultInt = 0;
@@ -20,16 +21,17 @@ private:
 
 public:
 	Column() {};
-	Column(char* name, ColumnType type)
+	Column(char* name, ColumnType type, int size)
 	{
 		setName(name);
 		setType(type);
+		setSize(size);
 	}
-	Column(char* name, ColumnType type, char* defaultText) : Column(name, type) { setDefaultText(defaultText); }
+	Column(char* name, ColumnType type, int size, char* defaultText) : Column(name, type, size) { setDefaultText(defaultText); }
 
-	Column(char* name, ColumnType type, int defaultInt) : Column(name, type) { setDefaultInt(defaultInt); }
+	Column(char* name, ColumnType type, int size, int defaultInt) : Column(name, type, size) { setDefaultInt(defaultInt); }
 
-	Column(char* name, ColumnType type, double defaultFloat) : Column(name, type) { setDefaultFloat(defaultFloat); }
+	Column(char* name, ColumnType type, int size, double defaultFloat) : Column(name, type, size) { setDefaultFloat(defaultFloat); }
 
 	~Column() {}
 
@@ -37,6 +39,7 @@ public:
 	{
 		setName(c.name);
 		setType(c.type);
+		setSize(c.size);
 		switch (c.type)
 		{
 		case TEXT: setDefaultText(c.defaultText); break;
@@ -47,6 +50,11 @@ public:
 
 	char* getName()
 	{
+		if (strlen(this->name) < 2)
+		{
+			char* copy = new char[1];
+			copy[0] = ""[0];
+		}
 		char* nameCopy = new char[strlen(this->name) + 1];
 		for (int i = 0; i < strlen(this->name) + 1; i++)
 			nameCopy[i] = this->name[i];
@@ -65,6 +73,9 @@ public:
 
 	ColumnType getType() { return this->type; }
 	void setType(ColumnType type) { this->type = type; }
+
+	int getSize() { return this->size; }
+	void setSize(int size) { this->size = size; }
 
 	char* getDefaultText()
 	{
