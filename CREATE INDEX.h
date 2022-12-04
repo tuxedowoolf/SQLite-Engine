@@ -54,3 +54,4 @@ void CreateIndex(char** tokenArray, int noTokens)
 	Index index(indexName, tableName, columnName);
 	cout << "Created the following index: " << endl << index << endl;
 }
+//

@@ -5,3 +5,4 @@ void DropIndex(char* indexName)
 {
 	cout << "You deleted the index: '" << indexName << "'." << endl;
 }
+//

@@ -248,3 +248,4 @@ ostream& operator<<(ostream& console, const Query& q)
 		cout << q.tokens[i] << endl;
 	return console;
 }
+//

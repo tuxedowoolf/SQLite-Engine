@@ -99,3 +99,4 @@ ostream& operator<<(ostream& console, const Index& i)
 	cout << "Index " << i.name << " on column " << i.columnName << " of table " << i.tableName << "." << endl;
 	return console;
 }
+//

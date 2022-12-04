@@ -52,3 +52,4 @@ void Insert(char** tokenArray, int noTokens)
 		cout << valuesToken[j] << ", ";
 	cout << valuesToken[noTokens - 4] << "." << endl;
 }
+//

@@ -101,3 +101,4 @@ public:
 	double getDefaultFloat() { return this->defaultFloat; }
 	void setDefaultFloat(double defaultFloat) { this->defaultFloat = defaultFloat; }
 };
+//

@@ -80,3 +80,4 @@ void Delete(char** tokenArray, int noTokens)
 
 	cout << "Deleted column from table '" << tableName << "' where " << whereTokens[0] << " = " << whereTokens[1] << "." << endl;
 }
+//
